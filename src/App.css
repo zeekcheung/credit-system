@@ -10,3 +10,39 @@ body,
 html {
   font-size: 62.5%;
 }
+
+.nav-link {
+  height: 100%;
+  line-height: 7vh;
+  display: inline-block;
+  font-size: rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-link:hover {
+  position: relative;
+  top: -0.5px;
+}
+
+.activated {
+  color: blue;
+  border-bottom: 3.5px solid blue;
+}
+
+.slide-link {
+  display: block;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  width: 10em;
+  height: 3em;
+  padding: 1em;
+  margin-right: 2em;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+.slide-activated {
+  background-color: blue;
+  color: white;
+}
