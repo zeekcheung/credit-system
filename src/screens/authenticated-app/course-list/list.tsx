@@ -70,17 +70,23 @@ export const List = ({ type, data, ...props }: ListProps) => {
   const client = useHttp()
   const handleClick = (
     endpoint: string,
+    method: string,
     param: { studentId: string; courseId: string }
-  ) => client(`/course/${endpoint}`, { data: param })
+  ) => client(`/course/${endpoint}`, { method, data: param })
 
   const render = (type: string) => {
     const endpoint: string = type === 'CourseList' ? 'choose' : 'drop'
     const content: string = type === 'CourseList' ? '选课' : '退选'
+    const method: string = type === 'CourseList' ? 'POST' : 'DELETE'
+
     return (_value: any, { id }: Course) => (
       <Button
         type={'primary'}
         onClick={() =>
-          handleClick(endpoint, { studentId: user!.studentId, courseId: id })
+          handleClick(endpoint, method, {
+            studentId: user!.studentId,
+            courseId: id,
+          }).catch((e) => console.log(e))
         }
       >
         {content}

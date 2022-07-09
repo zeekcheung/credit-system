@@ -7,7 +7,6 @@ import { List } from '../course-list/list'
 export const MyCourse = () => {
   const { user } = useAuth()
   const param = { studenId: user!.studentId }
-  console.log(user)
   const { data, error, isLoading } = useCourses('timetable', param)
 
   return (
