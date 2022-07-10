@@ -1,7 +1,7 @@
 /*
  * 封装 http 请求
  * */
-import { useAuth } from 'contexts/auth-context'
+
 import qs from 'qs'
 import { getToken, logout } from './users'
 
@@ -43,7 +43,7 @@ export const http = async (endpoint: string, config: Config = {}) => {
     return Promise.reject({ message: '请重新登录' })
   }
 
-  return response.ok ? _data : Promise.reject(_data)
+  return response.ok ? _data.data : Promise.reject(_data)
 }
 
 // 二次封装 http，自动携带 token

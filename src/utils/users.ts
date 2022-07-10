@@ -2,8 +2,6 @@
  * 处理用户逻辑
  * */
 
-import { type } from 'os'
-
 // 用户
 export interface IUser {
   userId: string
@@ -40,7 +38,10 @@ export const getToken = () => window.localStorage.getItem(tokenKey)
 
 // 设置 token
 export const setToken = (user: User) =>
-  window.localStorage.setItem(tokenKey, `${user.userId} ${user.password}` || '')
+  window.localStorage.setItem(
+    tokenKey,
+    `${user.username} ${user.password}` || ''
+  )
 
 // 清除 token
 export const clearToken = () => window.localStorage.removeItem(tokenKey)

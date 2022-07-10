@@ -1,9 +1,5 @@
 import { useMemo } from 'react'
-import {
-  URLSearchParamsInit,
-  useNavigate,
-  useSearchParams,
-} from 'react-router-dom'
+import { URLSearchParamsInit, useSearchParams } from 'react-router-dom'
 import { cleanObject } from 'utils'
 
 /**

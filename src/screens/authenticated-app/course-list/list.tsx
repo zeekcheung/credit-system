@@ -1,4 +1,4 @@
-import { Button, Table } from 'antd'
+import { Button, message, Table } from 'antd'
 import type { ColumnsType, TableProps } from 'antd/lib/table'
 import { useAuth } from 'contexts/auth-context'
 import { useHttp } from 'utils/http'
@@ -86,7 +86,11 @@ export const List = ({ type, data, ...props }: ListProps) => {
           handleClick(endpoint, method, {
             studentId: user!.studentId,
             courseId: id,
-          }).catch((e) => console.log(e))
+          })
+            .then(() => window.alert(`${content}成功`))
+            .catch(({ code, message }) => {
+              window.alert(`${content}失败(${code}})，${message}`)
+            })
         }
       >
         {content}

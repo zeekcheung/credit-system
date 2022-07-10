@@ -1,5 +1,5 @@
 {
-  "port": 5000,
+  "port": 8080,
   "watch": true,
   "middlewares": ["./__json_server_mock__/api/index.js"]
 }
